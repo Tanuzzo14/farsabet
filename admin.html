@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarsaBet – Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-text">FARSABET</span>
+      <span class="badge-premium">Admin</span>
+    </a>
+    <div class="header-subtitle">Pannello di Controllo</div>
+  </div>
+</header>
+
+<!-- ===== PASSWORD GATE ===== -->
+<div id="gate" class="admin-gate">
+  <div class="admin-card">
+    <div class="admin-card-title">🔒 Accesso Admin</div>
+    <p class="admin-card-sub">Inserisci la password per accedere al pannello di controllo.</p>
+    <form id="gate-form">
+      <div class="form-group">
+        <label for="inp-pass">Password</label>
+        <input type="password" id="inp-pass" placeholder="••••••••" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn-confirm">Entra</button>
+    </form>
+    <div id="gate-error" class="admin-error" hidden>❌ Password errata.</div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL (hidden until logged in) ===== -->
+<div id="panel" class="page-main" hidden>
+
+  <!-- Back link -->
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <a class="back-btn" href="index.html">← Torna al Palinsesto</a>
+    <button class="btn-clear" id="btn-logout">🚪 Esci</button>
+  </div>
+
+  <!-- ===== PLAYER NAMES ===== -->
+  <div class="bet-section">
+    <div class="section-header">
+      <span class="section-title">👥 Nomi Partecipanti</span>
+      <span class="section-subtitle">Modifica i nomi per la partita in corso</span>
+    </div>
+    <div class="admin-teams-grid">
+      <!-- Farsa -->
+      <div class="admin-team-col">
+        <div class="admin-team-header farsa-bg">⚽ Squadra della Farsa</div>
+        <div class="admin-players-list" id="farsa-players">
+          <div class="form-group">
+            <label>Giocatore 1</label>
+            <input type="text" class="player-input" data-team="farsa" data-idx="0" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 2</label>
+            <input type="text" class="player-input" data-team="farsa" data-idx="1" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 3</label>
+            <input type="text" class="player-input" data-team="farsa" data-idx="2" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 4</label>
+            <input type="text" class="player-input" data-team="farsa" data-idx="3" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 5</label>
+            <input type="text" class="player-input" data-team="farsa" data-idx="4" placeholder="Nome giocatore">
+          </div>
+        </div>
+      </div>
+      <!-- Birre -->
+      <div class="admin-team-col">
+        <div class="admin-team-header birre-bg">🍺 Squadra delle Birre</div>
+        <div class="admin-players-list" id="birre-players">
+          <div class="form-group">
+            <label>Giocatore 1</label>
+            <input type="text" class="player-input" data-team="birre" data-idx="0" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 2</label>
+            <input type="text" class="player-input" data-team="birre" data-idx="1" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 3</label>
+            <input type="text" class="player-input" data-team="birre" data-idx="2" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 4</label>
+            <input type="text" class="player-input" data-team="birre" data-idx="3" placeholder="Nome giocatore">
+          </div>
+          <div class="form-group">
+            <label>Giocatore 5</label>
+            <input type="text" class="player-input" data-team="birre" data-idx="4" placeholder="Nome giocatore">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ODDS ===== -->
+  <div class="bet-section">
+    <div class="section-header">
+      <span class="section-title">📊 Quote Giocatori</span>
+      <span class="section-subtitle">Calcolate automaticamente in base al livello del giocatore</span>
+    </div>
+    <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <p style="color:var(--text-secondary);font-size:13px">
+        Clicca <strong style="color:var(--yellow)">Rigenera Quote</strong> per calcolare nuove quote randomiche credibili per tutti i giocatori.
+        Le quote sono basate sul livello stimato di ogni giocatore con una variazione casuale del ±15%.
+      </p>
+      <button class="btn-regen" id="btn-regen">🎲 Rigenera Quote</button>
+      <!-- Preview table -->
+      <div id="odds-preview"></div>
+    </div>
+  </div>
+
+  <!-- ===== SAVE ===== -->
+  <button class="btn-confirm" id="btn-save" style="font-size:16px;padding:14px">💾 Salva Modifiche</button>
+
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

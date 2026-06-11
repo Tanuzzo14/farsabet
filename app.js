@@ -2,7 +2,74 @@
    app.js – FarsaBet main page logic
    ============================================================ */
 
-const STORAGE_KEY = 'farsabet_bets';
+const STORAGE_KEY  = 'farsabet_bets';
+const CONFIG_KEY   = 'farsabet_config';
+
+/* ---------- Default config (fallback when no admin data saved) ---------- */
+const DEFAULT_CONFIG = {
+  players: {
+    farsa: ['Simone', 'Peppe', 'Andrea', 'Raffaele', 'Luigi F.'],
+    birre: ['Gaetano', 'Ale', 'Serafino', 'Diego', 'Luigi B.']
+  },
+  playerOdds: {
+    'birre-0': [1.10, 1.45, 2.20],
+    'birre-1': [1.65, 2.60, 4.50],
+    'birre-2': [1.85, 3.20, 6.00],
+    'birre-3': [2.10, 4.00, 8.00],
+    'birre-4': [2.50, 6.00, 15.00],
+    'farsa-0': [1.25, 1.75, 2.80],
+    'farsa-1': [1.40, 2.10, 3.50],
+    'farsa-2': [2.35, 5.50, 12.00],
+    'farsa-3': [3.00, 8.50, 25.00],
+    'farsa-4': [3.50, 12.00, 35.00]
+  }
+};
+
+/* ---------- Load & apply player config ---------- */
+function loadConfig() {
+  try {
+    return JSON.parse(localStorage.getItem(CONFIG_KEY)) || DEFAULT_CONFIG;
+  } catch {
+    return DEFAULT_CONFIG;
+  }
+}
+
+function applyConfig(config) {
+  const { players, playerOdds } = config;
+
+  /* Update teams-card lists */
+  const elFarsa = document.getElementById('team-players-farsa');
+  const elBirre = document.getElementById('team-players-birre');
+  if (elFarsa) elFarsa.textContent = players.farsa.join(', ');
+  if (elBirre) elBirre.textContent = players.birre.join(', ');
+
+  /* Update marcatori player rows */
+  document.querySelectorAll('[data-player-row]').forEach(row => {
+    const pid       = row.dataset.playerRow;           // e.g. "birre-0"
+    const [team, i] = pid.split('-');
+    const name      = players[team][parseInt(i)];
+    const teamLabel = team === 'farsa' ? 'Farsa' : 'Birre';
+    const odds      = (playerOdds[pid] || DEFAULT_CONFIG.playerOdds[pid]);
+
+    /* Update visible name */
+    const nameSpan = row.querySelector('.pn-text');
+    if (nameSpan) nameSpan.textContent = name;
+
+    /* Update each bet button */
+    const typeLabels = { segna: 'Segna', doppietta: 'Doppietta', tripletta: 'Tripletta' };
+    const typeIndex  = { segna: 0, doppietta: 1, tripletta: 2 };
+    row.querySelectorAll('[data-bet-type]').forEach(btn => {
+      const type  = btn.dataset.betType;
+      const odd   = parseFloat(odds[typeIndex[type]]).toFixed(2);
+      btn.dataset.bet = `${name} (${teamLabel}) – ${typeLabels[type]}`;
+      btn.dataset.odd = odd;
+      btn.textContent = odd;
+    });
+  });
+}
+
+/* Apply config before attaching any listeners */
+applyConfig(loadConfig());
 
 /* ---------- Tab switching ---------- */
 const tabs      = document.querySelectorAll('.tab[data-tab]');
@@ -91,7 +158,7 @@ betForm.addEventListener('submit', e => {
   saveBets(bets);
 
   closeModal();
-  showToast(`✅ Scommessa piazzata! ${nome} ${cognome} – ${currentBet.scommessa} @${currentBet.quota}`);
+  showToast(`✅ Scommessa piazzata! ${nome} ${cognome} – ${currentBet.scommessa} @${currentBet.quota} · Vincita potenziale: 🍺 ${vincitaPotenziale}`);
 });
 
 /* ---------- Storage helpers ---------- */

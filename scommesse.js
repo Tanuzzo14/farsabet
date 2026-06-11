@@ -30,8 +30,8 @@ function render() {
   const totalVincita = bets.reduce((s, b) => s + parseFloat(b.vincitaPotenziale), 0);
 
   countEl.textContent   = bets.length;
-  importoEl.textContent = '€' + totalImporto.toFixed(2);
-  vincitaEl.textContent = '€' + totalVincita.toFixed(2);
+  importoEl.textContent = '🍺 ' + totalImporto.toFixed(2);
+  vincitaEl.textContent = '🍺 ' + totalVincita.toFixed(2);
 
   /* List */
   listEl.innerHTML = '';
@@ -67,9 +67,9 @@ function render() {
         </div>
       </div>
       <div class="bet-card-right">
-        <div class="bet-amount">€${parseFloat(bet.importo).toFixed(2)}</div>
+        <div class="bet-amount">🍺 ${parseFloat(bet.importo).toFixed(2)}</div>
         <div class="odd-badge-card">@${escHtml(bet.quota)}</div>
-        <div class="win-amount">Vincita: €${escHtml(bet.vincitaPotenziale)}</div>
+        <div class="win-amount">Vincita: 🍺 ${escHtml(bet.vincitaPotenziale)}</div>
       </div>`;
 
     listEl.appendChild(card);
