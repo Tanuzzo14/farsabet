@@ -163,7 +163,7 @@ function renderOddsPreview(config) {
     html += `
       <div class="opr-row">
         <span class="opr-name">${escHtml(name)} <span class="player-team ${teamClass}">${teamLabel}</span></span>
-        <span class="opr-level">${level}</span>
+        <span class="opr-level">${escHtml(level)}</span>
         <span class="opr-odd">${parseFloat(s).toFixed(2)}</span>
         <span class="opr-odd">${parseFloat(d).toFixed(2)}</span>
         <span class="opr-odd">${parseFloat(t).toFixed(2)}</span>
