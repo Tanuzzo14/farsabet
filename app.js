@@ -11,17 +11,29 @@ const DEFAULT_CONFIG = {
     farsa: ['Simone', 'Peppe', 'Andrea', 'Raffaele', 'Luigi F.'],
     birre: ['Gaetano', 'Ale', 'Serafino', 'Diego', 'Luigi B.']
   },
+  playerLevels: {
+    'birre-0': 'ALTO',
+    'birre-1': 'MEDIO',
+    'birre-2': 'MEDIO',
+    'birre-3': 'BASSO',
+    'birre-4': 'PORTIERE',
+    'farsa-0': 'ALTO',
+    'farsa-1': 'MEDIO',
+    'farsa-2': 'MEDIO',
+    'farsa-3': 'BASSO',
+    'farsa-4': 'PORTIERE'
+  },
   playerOdds: {
-    'birre-0': [1.10, 1.45, 2.20],
-    'birre-1': [1.65, 2.60, 4.50],
-    'birre-2': [1.85, 3.20, 6.00],
-    'birre-3': [2.10, 4.00, 8.00],
-    'birre-4': [2.50, 6.00, 15.00],
-    'farsa-0': [1.25, 1.75, 2.80],
-    'farsa-1': [1.40, 2.10, 3.50],
-    'farsa-2': [2.35, 5.50, 12.00],
-    'farsa-3': [3.00, 8.50, 25.00],
-    'farsa-4': [3.50, 12.00, 35.00]
+    'birre-0': [1.35, 1.60, 1.90],
+    'birre-1': [1.55, 2.05, 2.60],
+    'birre-2': [1.70, 2.20, 2.90],
+    'birre-3': [2.35, 3.15, 4.40],
+    'birre-4': [5.30, 6.05, 6.80],
+    'farsa-0': [1.30, 1.55, 1.85],
+    'farsa-1': [1.50, 1.95, 2.50],
+    'farsa-2': [1.65, 2.15, 2.85],
+    'farsa-3': [2.25, 3.00, 4.20],
+    'farsa-4': [5.10, 5.90, 6.60]
   }
 };
 

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarsaBet – Gestione Dati</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-text">FARSABET</span>
+      <span class="badge-premium">Admin</span>
+    </a>
+    <div class="header-subtitle">Gestione Dati</div>
+  </div>
+</header>
+
+<div class="page-main">
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <a class="back-btn" href="index.html">← Torna al Palinsesto</a>
+    <button class="btn-clear" id="btn-logout">🚪 Esci</button>
+  </div>
+
+  <div class="bet-section">
+    <div class="section-header">
+      <span class="section-title">👥 Nomi e Livello Partecipanti</span>
+      <span class="section-subtitle">Ogni evento è quotato in birre.</span>
+    </div>
+    <div class="admin-teams-grid">
+      <div class="admin-team-col">
+        <div class="admin-team-header farsa-bg">⚽ Squadra della Farsa</div>
+        <div class="admin-players-list">
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="farsa" data-idx="0" placeholder="Giocatore 1">
+            <select class="player-level" data-pid="farsa-0"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="farsa" data-idx="1" placeholder="Giocatore 2">
+            <select class="player-level" data-pid="farsa-1"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="farsa" data-idx="2" placeholder="Giocatore 3">
+            <select class="player-level" data-pid="farsa-2"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="farsa" data-idx="3" placeholder="Giocatore 4">
+            <select class="player-level" data-pid="farsa-3"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="farsa" data-idx="4" placeholder="Giocatore 5">
+            <select class="player-level" data-pid="farsa-4"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-team-col">
+        <div class="admin-team-header birre-bg">🍺 Squadra delle Birre</div>
+        <div class="admin-players-list">
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="birre" data-idx="0" placeholder="Giocatore 1">
+            <select class="player-level" data-pid="birre-0"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="birre" data-idx="1" placeholder="Giocatore 2">
+            <select class="player-level" data-pid="birre-1"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="birre" data-idx="2" placeholder="Giocatore 3">
+            <select class="player-level" data-pid="birre-2"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="birre" data-idx="3" placeholder="Giocatore 4">
+            <select class="player-level" data-pid="birre-3"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+          <div class="admin-player-row">
+            <input type="text" class="player-input" data-team="birre" data-idx="4" placeholder="Giocatore 5">
+            <select class="player-level" data-pid="birre-4"><option>BASSO</option><option>MEDIO</option><option>ALTO</option><option>PORTIERE</option></select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bet-section">
+    <div class="section-header">
+      <span class="section-title">📊 Quote Giocatori</span>
+      <span class="section-subtitle">Massimo quota per evento: 7.00</span>
+    </div>
+    <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <p style="color:var(--text-secondary);font-size:13px">
+        BASSO: tripletta 3-5 · MEDIO: 2-3 · ALTO: 1.50-2 · PORTIERE: 5-7 (tutte le quote in birre).
+      </p>
+      <button class="btn-regen" id="btn-regen">🎲 Rigenera Quote</button>
+      <div id="odds-preview"></div>
+    </div>
+  </div>
+
+  <button class="btn-confirm" id="btn-save" style="font-size:16px;padding:14px">&#128190; Salva Modifiche</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

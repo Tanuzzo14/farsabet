@@ -525,7 +525,8 @@ footer {
   text-transform: uppercase;
   letter-spacing: .6px;
 }
-.form-group input {
+.form-group input,
+.form-group select {
   background: var(--bg-section);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -535,7 +536,8 @@ footer {
   outline: none;
   transition: border-color .2s;
 }
-.form-group input:focus { border-color: var(--yellow); }
+.form-group input:focus,
+.form-group select:focus { border-color: var(--yellow); }
 .form-group input::placeholder { color: var(--text-muted); }
 
 .btn-confirm {
@@ -805,6 +807,26 @@ footer {
 }
 .admin-team-col:last-child .admin-players-list { border-right: none; }
 
+.admin-player-row {
+  display: grid;
+  grid-template-columns: 1fr 130px;
+  gap: 10px;
+  align-items: center;
+}
+
+.admin-player-row .player-level {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.opr-level {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
 /* Odds regeneration button */
 .btn-regen {
   background: #1a3d2e;
@@ -830,7 +852,7 @@ footer {
 .opr-header,
 .opr-row {
   display: grid;
-  grid-template-columns: 1fr 70px 90px 90px;
+  grid-template-columns: 1fr 95px 70px 90px 90px;
   padding: 9px 14px;
   gap: 8px;
   align-items: center;
@@ -856,6 +878,7 @@ footer {
 @media (max-width: 640px) {
   .admin-teams-grid { grid-template-columns: 1fr; }
   .admin-team-col:first-child .admin-players-list { border-right: none; border-bottom: 1px solid var(--border); }
+  .admin-player-row { grid-template-columns: 1fr; }
   .opr-header,
-  .opr-row { grid-template-columns: 1fr 60px 75px 75px; font-size: 12px; padding: 8px 10px; }
+  .opr-row { grid-template-columns: 1fr 70px 60px 75px 75px; font-size: 12px; padding: 8px 10px; }
 }
