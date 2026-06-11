@@ -394,6 +394,7 @@ footer {
   justify-content: space-between;
   gap: 12px;
 }
+.bet-slip[hidden] { display: none; }
 
 .bet-slip-info {
   flex: 1;
