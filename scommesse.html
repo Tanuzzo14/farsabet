@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarsaBet – Scommesse Avvenute</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1><span>FarsaBet</span> – Scommesse Avvenute</h1>
+    <div class="header-actions">
+      <button class="btn-export" id="btn-export" title="Scarica tutte le scommesse come file JSON">⬇️ Esporta JSON</button>
+      <button class="btn-clear" id="btn-clear">🗑 Cancella tutto</button>
+      <a class="back-btn" href="index.html">← Torna al Palinsesto</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="page-main">
+
+  <!-- Stats -->
+  <div class="bets-stats" id="bets-stats">
+    <div class="stat-card">
+      <div class="stat-label">Scommesse Totali</div>
+      <div class="stat-value" id="stat-count">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Importo Totale</div>
+      <div class="stat-value" id="stat-importo">€0.00</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Vincita Potenziale</div>
+      <div class="stat-value" id="stat-vincita">€0.00</div>
+    </div>
+  </div>
+
+  <!-- Bets list -->
+  <div class="bets-list" id="bets-list"></div>
+
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="scommesse.js"></script>
+</body>
+</html>

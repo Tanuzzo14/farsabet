@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarsaBet – Palinsesto Ufficiale Extra V2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-text">FARSABET</span>
+      <span class="badge-premium">Premium Edition</span>
+    </a>
+    <div class="header-subtitle">Palinsesto Ufficiale Extra V2</div>
+  </div>
+  <nav class="tabs" id="main-tabs">
+    <button class="tab active" data-tab="calcio">Calcio</button>
+    <button class="tab" data-tab="combo">Combo Pro</button>
+    <button class="tab" data-tab="marcatori">Marcatori</button>
+    <button class="tab" data-tab="sanzioni">Sanzioni &amp; Var</button>
+    <button class="tab" data-tab="quote">Quote Shock</button>
+    <a class="tab tab-nav-link" href="scommesse.html">📋 Scommesse</a>
+  </nav>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+  <!-- Teams card -->
+  <div class="teams-card">
+    <div class="team-row">
+      <span class="team-label farsa">Squadra Farsa</span>
+      <span class="team-players">Simone, Peppe, Andrea, Raffaele, Luigi F.</span>
+    </div>
+    <div class="team-row">
+      <span class="team-label birre">Squadra Birre</span>
+      <span class="team-players">Gaetano, Ale, Serafino, Diego, Luigi B.</span>
+    </div>
+  </div>
+
+  <!-- Match card -->
+  <div class="match-card">
+    <div class="match-badge">🏟 Euro Calcetto Amici – Big Match of the Year</div>
+    <div class="match-title">
+      <span>Squadra della Farsa</span>
+      <span class="vs">vs</span>
+      <span>Squadra delle Birre</span>
+    </div>
+    <div class="tactical-note">
+      <strong>Note tattiche:</strong> Squadra delle Birre nettamente favorita, Gaetano punta di diamante.
+      La Squadra della Farsa si affida interamente alla retroguardia e al contropiede guidato
+      dal duo d'attacco Simone-Peppe.
+    </div>
+  </div>
+
+  <!-- ===================================================
+       TAB: CALCIO
+       =================================================== -->
+  <div class="tab-section active" id="tab-calcio">
+
+    <!-- Esito Finale 1X2 -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Esito Finale (1X2)</span>
+        <span class="section-subtitle">Tempo Regolamentare</span>
+      </div>
+      <div class="odds-grid grid-3">
+        <div class="odd-item">
+          <div class="odd-label">1 (Farsa)</div>
+          <button class="odd-btn" data-bet="Esito Finale – 1 (Farsa)" data-odd="3.60">3.60</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">X (Pareggio)</div>
+          <button class="odd-btn" data-bet="Esito Finale – X (Pareggio)" data-odd="8.00">8.00</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">2 (Birre)</div>
+          <button class="odd-btn" data-bet="Esito Finale – 2 (Birre)" data-odd="1.38">1.38</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doppia Chance -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Doppia Chance</span>
+        <span class="section-subtitle">Copertura Esito</span>
+      </div>
+      <div class="odds-grid grid-3">
+        <div class="odd-item">
+          <div class="odd-label">1X (Farsa o X)</div>
+          <button class="odd-btn" data-bet="Doppia Chance – 1X (Farsa o X)" data-odd="2.55">2.55</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">X2 (Birre o X)</div>
+          <button class="odd-btn" data-bet="Doppia Chance – X2 (Birre o X)" data-odd="1.12">1.12</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">12 (No Pareggio)</div>
+          <button class="odd-btn" data-bet="Doppia Chance – 12 (No Pareggio)" data-odd="1.05">1.05</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Esito 1° Tempo -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Esito 1° Tempo (1X2)</span>
+        <span class="section-subtitle">Solo primi 25 minuti di gioco</span>
+      </div>
+      <div class="odds-grid grid-3">
+        <div class="odd-item">
+          <div class="odd-label">1 (Farsa In Vantaggio)</div>
+          <button class="odd-btn" data-bet="Esito 1° Tempo – 1 (Farsa In Vantaggio)" data-odd="4.10">4.10</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">X (Parità a metà)</div>
+          <button class="odd-btn" data-bet="Esito 1° Tempo – X (Parità a metà)" data-odd="3.40">3.40</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">2 (Birre In Vantaggio)</div>
+          <button class="odd-btn" data-bet="Esito 1° Tempo – 2 (Birre In Vantaggio)" data-odd="1.65">1.65</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Totale Goal Under/Over -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Totale Goal (Under/Over)</span>
+        <span class="section-subtitle">Linea Principale Fissata a 17.5</span>
+      </div>
+      <div class="ou-header-row">
+        <span class="ou-col-label">Linea di Demarcazione</span>
+        <span class="ou-col-label" style="text-align:center">Over</span>
+        <span class="ou-col-label" style="text-align:center">Under</span>
+      </div>
+      <div class="ou-row">
+        <span class="ou-row-label">Totale Goal 15.5</span>
+        <div class="ou-cell"><button class="odd-btn-sm" data-bet="Totale Goal 15.5 – OVER" data-odd="1.35">1.35</button></div>
+        <div class="ou-cell"><button class="odd-btn-sm" data-bet="Totale Goal 15.5 – UNDER" data-odd="2.85">2.85</button></div>
+      </div>
+      <div class="ou-row">
+        <span class="ou-row-label">Totale Goal 17.5 <span class="main-mark">(Main)</span></span>
+        <div class="ou-cell"><button class="odd-btn-sm" data-bet="Totale Goal 17.5 – OVER" data-odd="1.85">1.85</button></div>
+        <div class="ou-cell"><button class="odd-btn-sm" data-bet="Totale Goal 17.5 – UNDER" data-odd="1.85">1.85</button></div>
+      </div>
+      <div class="ou-row">
+        <span class="ou-row-label">Totale Goal 19.5</span>
+        <div class="ou-cell"><button class="odd-btn-sm" data-bet="Totale Goal 19.5 – OVER" data-odd="2.50">2.50</button></div>
+        <div class="ou-cell"><button class="odd-btn-sm" data-bet="Totale Goal 19.5 – UNDER" data-odd="1.45">1.45</button></div>
+      </div>
+    </div>
+
+    <!-- Somma Goal Pari/Dispari -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Somma Goal (Pari / Dispari)</span>
+      </div>
+      <div class="odds-grid grid-2">
+        <div class="odd-item">
+          <div class="odd-label">PARI</div>
+          <button class="odd-btn" data-bet="Somma Goal – PARI" data-odd="1.90">1.90</button>
+        </div>
+        <div class="odd-item">
+          <div class="odd-label">DISPARI</div>
+          <button class="odd-btn" data-bet="Somma Goal – DISPARI" data-odd="1.90">1.90</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metodo 1° Goal -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Metodo del 1° Goal dell'Incontro</span>
+        <span class="section-subtitle">Come verrà sbloccato il match?</span>
+      </div>
+      <div class="odds-list">
+        <div class="odds-list-item">
+          <div class="list-label">Tiro di potenza ravvicinato / Sotto la traversa</div>
+          <button class="odd-btn-sm" data-bet="Metodo 1° Goal – Tiro potenza / Sotto traversa" data-odd="1.80">1.80</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Azione di contropiede solitario</div>
+          <button class="odd-btn-sm" data-bet="Metodo 1° Goal – Contropiede solitario" data-odd="2.45">2.45</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Tiro da fuori area da fermo</div>
+          <button class="odd-btn-sm" data-bet="Metodo 1° Goal – Tiro da fuori area da fermo" data-odd="4.50">4.50</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Deviazione fortunosa (Sfondamento di panza/chiappa)</div>
+          <button class="odd-btn-sm" data-bet="Metodo 1° Goal – Deviazione fortunosa (panza/chiappa)" data-odd="7.00">7.00</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-calcio -->
+
+  <!-- ===================================================
+       TAB: COMBO PRO
+       =================================================== -->
+  <div class="tab-section" id="tab-combo">
+
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Combo Match (Esito + Under/Over 17.5)</span>
+        <span class="section-subtitle">Alza la quota rischiando</span>
+      </div>
+      <div class="odds-list">
+        <div class="odds-list-item">
+          <div class="list-label">
+            1 + Over 17.5
+            <div class="list-sublabel">Vince Farsa con tanti gol complessivi</div>
+          </div>
+          <button class="odd-btn-sm" data-bet="Combo – 1 + Over 17.5" data-odd="5.50">5.50</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">
+            1 + Under 17.5
+            <div class="list-sublabel">Vince Farsa di misura o puntando sulla difesa</div>
+          </div>
+          <button class="odd-btn-sm" data-bet="Combo – 1 + Under 17.5" data-odd="6.50">6.50</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">
+            2 + Over 17.5
+            <div class="list-sublabel">Vince Birre in goleada totale</div>
+          </div>
+          <button class="odd-btn-sm" data-bet="Combo – 2 + Over 17.5" data-odd="2.10">2.10</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">
+            2 + Under 17.5
+            <div class="list-sublabel">Vince Birre con meno di 18 gol totali nel match</div>
+          </div>
+          <button class="odd-btn-sm" data-bet="Combo – 2 + Under 17.5" data-odd="2.65">2.65</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-combo -->
+
+  <!-- ===================================================
+       TAB: MARCATORI
+       =================================================== -->
+  <div class="tab-section" id="tab-marcatori">
+
+    <!-- Dinamiche della Partita -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Dinamiche della Partita</span>
+      </div>
+      <div class="dyn-header-row">
+        <span class="dyn-col-label">Mercato Specifico</span>
+        <span class="dyn-col-label">Squadra Farsa</span>
+        <span class="dyn-col-label">Squadra Birre</span>
+      </div>
+      <div class="dyn-row">
+        <span class="dyn-row-label">Segna il 1° Goal</span>
+        <div class="dyn-cell"><button class="odd-btn-sm" data-bet="Segna 1° Goal – Squadra Farsa" data-odd="2.20">2.20</button></div>
+        <div class="dyn-cell"><button class="odd-btn-sm" data-bet="Segna 1° Goal – Squadra Birre" data-odd="1.55">1.55</button></div>
+      </div>
+      <div class="dyn-row">
+        <span class="dyn-row-label">Segna l'ULTIMO Goal</span>
+        <div class="dyn-cell"><button class="odd-btn-sm" data-bet="Segna Ultimo Goal – Squadra Farsa" data-odd="2.00">2.00</button></div>
+        <div class="dyn-cell"><button class="odd-btn-sm" data-bet="Segna Ultimo Goal – Squadra Birre" data-odd="1.65">1.65</button></div>
+      </div>
+      <div class="dyn-row">
+        <span class="dyn-row-label">Ribaltone <span class="sub">(Svantaggio → Vittoria SÌ)</span></span>
+        <div class="dyn-cell"><button class="odd-btn-sm" data-bet="Ribaltone – Squadra Farsa" data-odd="6.50">6.50</button></div>
+        <div class="dyn-cell"><button class="odd-btn-sm" data-bet="Ribaltone – Squadra Birre" data-odd="3.20">3.20</button></div>
+      </div>
+    </div>
+
+    <!-- Margine di Vittoria esatto -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Margine di Vittoria esatto</span>
+        <span class="section-subtitle">Scarto gol a fine partita</span>
+      </div>
+      <div class="margin-header-row">
+        <span class="mg-col-label">Selezione Margine</span>
+        <span class="mg-col-label">Quota</span>
+      </div>
+      <div class="margin-row">
+        <span class="mg-row-label">Squadra delle Birre vince di 1-2 goal</span>
+        <div class="mg-cell"><button class="odd-btn-sm" data-bet="Margine – Birre vince 1-2 goal" data-odd="3.00">3.00</button></div>
+      </div>
+      <div class="margin-row">
+        <span class="mg-row-label">Squadra delle Birre vince di 3-4 goal</span>
+        <div class="mg-cell"><button class="odd-btn-sm" data-bet="Margine – Birre vince 3-4 goal" data-odd="2.40">2.40</button></div>
+      </div>
+      <div class="margin-row">
+        <span class="mg-row-label">Squadra delle Birre vince di 5+ goal</span>
+        <div class="mg-cell"><button class="odd-btn-sm" data-bet="Margine – Birre vince 5+ goal" data-odd="3.25">3.25</button></div>
+      </div>
+      <div class="margin-row">
+        <span class="mg-row-label">Squadra della Farsa vince di 1-2 goal</span>
+        <div class="mg-cell"><button class="odd-btn-sm" data-bet="Margine – Farsa vince 1-2 goal" data-odd="4.50">4.50</button></div>
+      </div>
+      <div class="margin-row">
+        <span class="mg-row-label">Squadra della Farsa vince di 3-4 goal</span>
+        <div class="mg-cell"><button class="odd-btn-sm" data-bet="Margine – Farsa vince 3-4 goal" data-odd="8.50">8.50</button></div>
+      </div>
+      <div class="margin-row">
+        <span class="mg-row-label">Squadra della Farsa vince di 5+ goal</span>
+        <div class="mg-cell"><button class="odd-btn-sm" data-bet="Margine – Farsa vince 5+ goal" data-odd="25.00">25.00</button></div>
+      </div>
+    </div>
+
+    <!-- Prestazioni Giocatori -->
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">Prestazioni Giocatori (Marcatori &amp; Multi-Goal)</span>
+        <span class="section-subtitle">Doppiette e Triplette incluse</span>
+      </div>
+      <div class="players-header-row">
+        <span class="pl-col-label">Giocatore</span>
+        <span class="pl-col-label">Segna</span>
+        <span class="pl-col-label">Doppietta</span>
+        <span class="pl-col-label">Tripletta</span>
+      </div>
+      <!-- Birre -->
+      <div class="players-row">
+        <span class="player-name">Gaetano <span class="player-team birre">Birre</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Gaetano (Birre) – Segna" data-odd="1.10">1.10</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Gaetano (Birre) – Doppietta" data-odd="1.45">1.45</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Gaetano (Birre) – Tripletta" data-odd="2.20">2.20</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Ale <span class="player-team birre">Birre</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Ale (Birre) – Segna" data-odd="1.65">1.65</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Ale (Birre) – Doppietta" data-odd="2.60">2.60</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Ale (Birre) – Tripletta" data-odd="4.50">4.50</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Serafino <span class="player-team birre">Birre</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Serafino (Birre) – Segna" data-odd="1.85">1.85</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Serafino (Birre) – Doppietta" data-odd="3.20">3.20</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Serafino (Birre) – Tripletta" data-odd="6.00">6.00</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Diego <span class="player-team birre">Birre</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Diego (Birre) – Segna" data-odd="2.10">2.10</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Diego (Birre) – Doppietta" data-odd="4.00">4.00</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Diego (Birre) – Tripletta" data-odd="8.00">8.00</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Luigi B. <span class="player-team birre">Birre</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Luigi B. (Birre) – Segna" data-odd="2.50">2.50</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Luigi B. (Birre) – Doppietta" data-odd="6.00">6.00</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Luigi B. (Birre) – Tripletta" data-odd="15.00">15.00</button></div>
+      </div>
+      <!-- Farsa -->
+      <div class="players-row">
+        <span class="player-name">Simone <span class="player-team farsa">Farsa</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Simone (Farsa) – Segna" data-odd="1.25">1.25</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Simone (Farsa) – Doppietta" data-odd="1.75">1.75</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Simone (Farsa) – Tripletta" data-odd="2.80">2.80</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Peppe <span class="player-team farsa">Farsa</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Peppe (Farsa) – Segna" data-odd="1.40">1.40</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Peppe (Farsa) – Doppietta" data-odd="2.10">2.10</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Peppe (Farsa) – Tripletta" data-odd="3.50">3.50</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Andrea <span class="player-team farsa">Farsa</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Andrea (Farsa) – Segna" data-odd="2.35">2.35</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Andrea (Farsa) – Doppietta" data-odd="5.50">5.50</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Andrea (Farsa) – Tripletta" data-odd="12.00">12.00</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Raffaele <span class="player-team farsa">Farsa</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Raffaele (Farsa) – Segna" data-odd="3.00">3.00</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Raffaele (Farsa) – Doppietta" data-odd="8.50">8.50</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Raffaele (Farsa) – Tripletta" data-odd="25.00">25.00</button></div>
+      </div>
+      <div class="players-row">
+        <span class="player-name">Luigi F. <span class="player-team farsa">Farsa</span></span>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Luigi F. (Farsa) – Segna" data-odd="3.50">3.50</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Luigi F. (Farsa) – Doppietta" data-odd="12.00">12.00</button></div>
+        <div class="pl-cell"><button class="odd-btn-sm" data-bet="Luigi F. (Farsa) – Tripletta" data-odd="35.00">35.00</button></div>
+      </div>
+    </div>
+
+  </div><!-- /tab-marcatori -->
+
+  <!-- ===================================================
+       TAB: SANZIONI & VAR
+       =================================================== -->
+  <div class="tab-section" id="tab-sanzioni">
+
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">🎯 Eventi Live Clamorosi / Sanzioni</span>
+        <span class="section-subtitle">Cose che succedono solo nei nostri calcetti</span>
+      </div>
+      <div class="odds-list">
+        <div class="odds-list-item">
+          <div class="list-label">Discussione accesa con minaccia di abbandonare il campo: SÌ</div>
+          <button class="odd-btn-sm" data-bet="Discussione accesa – minaccia abbandono campo SÌ" data-odd="1.50">1.50</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Almeno un giocatore accusa un crampo fulminante dopo 10 minuti</div>
+          <button class="odd-btn-sm" data-bet="Crampo fulminante dopo 10 minuti SÌ" data-odd="1.22">1.22</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Tiro svirgolato che finisce fuori dal centro sportivo / Recupero pallone oltre la recinzione</div>
+          <button class="odd-btn-sm" data-bet="Tiro svirgolato fuori dal centro sportivo SÌ" data-odd="1.30">1.30</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Gol di tacco o giocata da circo (Riuscita o tentata fallosamente)</div>
+          <button class="odd-btn-sm" data-bet="Gol di tacco o giocata da circo SÌ" data-odd="3.50">3.50</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Qualcuno giura di aver toccato la palla prima della linea (Contestazione Var Spontanea)</div>
+          <button class="odd-btn-sm" data-bet="Contestazione Var Spontanea SÌ" data-odd="1.75">1.75</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-sanzioni -->
+
+  <!-- ===================================================
+       TAB: QUOTE SHOCK
+       =================================================== -->
+  <div class="tab-section" id="tab-quote">
+
+    <div class="bet-section">
+      <div class="section-header">
+        <span class="section-title">🎭 Super Speciali Calcetto</span>
+        <span class="section-subtitle">Solo per veri scommettitori</span>
+      </div>
+      <div class="odds-list">
+        <div class="odds-list-item">
+          <div class="list-label">Autogol nel Match: SÌ</div>
+          <button class="odd-btn-sm" data-bet="Autogol nel Match SÌ" data-odd="2.30">2.30</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Un Portiere segna un gol da area ad area (Chiunque esso sia)</div>
+          <button class="odd-btn-sm" data-bet="Portiere segna gol da area ad area SÌ" data-odd="15.00">15.00</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Palo/Traversa colpita nel primo tempo: SÌ</div>
+          <button class="odd-btn-sm" data-bet="Palo/Traversa colpita 1° tempo SÌ" data-odd="1.40">1.40</button>
+        </div>
+        <div class="odds-list-item">
+          <div class="list-label">Risultato Esatto "Altro" <span style="color:var(--text-muted);font-size:11px">(Ogni squadra segna più di 9 gol)</span></div>
+          <button class="odd-btn-sm" data-bet='Risultato Esatto "Altro" (entrambe +9 gol)' data-odd="4.00">4.00</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-quote -->
+
+</main><!-- /main -->
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  Gioca responsabilmente • Palinsesto puramente goliardico per la partita del giorno.<br>
+  FarsaBet © 2026 – Quote soggette a variazioni in base alle birre consumate pre-match.
+</footer>
+
+<!-- ===== MODAL SCOMMESSA ===== -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Piazza la tua Scommessa</h3>
+      <button class="modal-close" id="modal-close" aria-label="Chiudi">✕</button>
+    </div>
+    <div class="modal-bet-info" id="modal-bet-info">
+      <div class="bet-name" id="modal-bet-name"></div>
+      <div class="bet-odd" id="modal-bet-odd"></div>
+    </div>
+    <form id="bet-form" novalidate>
+      <div class="form-group">
+        <label for="inp-nome">Nome</label>
+        <input type="text" id="inp-nome" placeholder="Inserisci il tuo nome" autocomplete="given-name" required>
+      </div>
+      <div class="form-group">
+        <label for="inp-cognome">Cognome</label>
+        <input type="text" id="inp-cognome" placeholder="Inserisci il tuo cognome" autocomplete="family-name" required>
+      </div>
+      <div class="form-group">
+        <label for="inp-telefono">Numero di Telefono</label>
+        <input type="tel" id="inp-telefono" placeholder="es. 333 1234567" autocomplete="tel" required>
+      </div>
+      <div class="form-group">
+        <label for="inp-importo">Importo Scommessa (€)</label>
+        <input type="number" id="inp-importo" placeholder="es. 10" min="0.01" step="0.01" required>
+      </div>
+      <button type="submit" class="btn-confirm">🎰 Conferma Scommessa</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

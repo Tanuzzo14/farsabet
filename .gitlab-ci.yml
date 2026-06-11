@@ -1,0 +1,18 @@
+# GitLab Pages – FarsaBet static site
+# Deploys the site to GitLab Pages on every push to the default branch.
+
+image: alpine:latest
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public
+    - cp index.html scommesse.html style.css app.js scommesse.js public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
