@@ -262,6 +262,14 @@ function saveBets(bets) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(bets, null, 2));
 }
 
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 /* ---------- Toast ---------- */
 let toastTimer = null;
 
