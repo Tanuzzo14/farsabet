@@ -462,6 +462,17 @@
 
 </main><!-- /main -->
 
+<div class="bet-slip" id="bet-slip" hidden>
+  <div class="bet-slip-info">
+    <div class="bet-slip-title">Schedina pronta</div>
+    <div class="bet-slip-meta">
+      <span id="bet-slip-count">0 eventi selezionati</span>
+      <span id="bet-slip-quote">Quota totale @0.00</span>
+    </div>
+  </div>
+  <button type="button" class="btn-confirm bet-slip-btn" id="btn-open-bet-modal" disabled>🍺 Scommetti</button>
+</div>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   Gioca responsabilmente • Palinsesto puramente goliardico per la partita del giorno.<br>
@@ -478,6 +489,7 @@
     <div class="modal-bet-info" id="modal-bet-info">
       <div class="bet-name" id="modal-bet-name"></div>
       <div class="bet-odd" id="modal-bet-odd"></div>
+      <div class="modal-bet-list" id="modal-bet-list"></div>
     </div>
     <form id="bet-form" novalidate>
       <div class="form-group">
@@ -496,7 +508,7 @@
         <label for="inp-importo">Birre da scommettere 🍺</label>
         <input type="number" id="inp-importo" placeholder="es. 2" min="0.5" step="0.5" required>
       </div>
-      <button type="submit" class="btn-confirm">🍺 Conferma Scommessa</button>
+      <button type="submit" class="btn-confirm">🍺 Scommetti</button>
     </form>
   </div>
 </div>

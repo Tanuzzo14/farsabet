@@ -245,6 +245,12 @@ main, .page-main {
 }
 .odd-btn:hover  { background: var(--bg-odd-hover); transform: scale(1.02); }
 .odd-btn:active { transform: scale(.97); }
+.odd-btn.selected,
+.odd-btn-sm.selected {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: #1a1a1a;
+}
 
 /* ---------- Under/Over table ---------- */
 .ou-header-row,
@@ -376,6 +382,50 @@ footer {
   line-height: 1.8;
 }
 
+.bet-slip {
+  position: sticky;
+  bottom: 0;
+  z-index: 150;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bet-slip-info {
+  flex: 1;
+  background: var(--bg-header);
+  border: 1px solid var(--yellow);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.bet-slip-title {
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.bet-slip-meta {
+  margin-top: 4px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.bet-slip-btn {
+  flex-shrink: 0;
+  margin-top: 0;
+  min-width: 150px;
+}
+
 /* ============================================================
    MODAL
    ============================================================ */
@@ -437,6 +487,27 @@ footer {
 }
 .modal-bet-info .bet-name { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
 .modal-bet-info .bet-odd  { font-size: 26px; font-weight: 800; color: var(--yellow); }
+
+.modal-bet-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-bet-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.modal-bet-list-item span:last-child,
+.modal-bet-list-item strong {
+  color: var(--yellow);
+}
 
 #bet-form {
   padding: 16px 20px 20px;
@@ -595,6 +666,21 @@ footer {
 }
 .bettor-name    { font-size: 15px; font-weight: 700; }
 .bet-selection  { color: var(--yellow); font-size: 13px; margin: 5px 0; }
+.bet-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.bet-selection-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+.bet-selection-item strong { color: var(--yellow); }
 .bet-meta       { color: var(--text-muted); font-size: 12px; display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
 .bet-card-right { text-align: right; }
 .bet-amount     { font-size: 20px; font-weight: 800; }
@@ -641,6 +727,8 @@ footer {
   .bet-card       { grid-template-columns: 1fr; }
   .bet-card-right { text-align: left; }
   .stat-value     { font-size: 20px; }
+  .bet-slip       { flex-direction: column; align-items: stretch; }
+  .bet-slip-btn   { width: 100%; }
 }
 
 /* ============================================================
