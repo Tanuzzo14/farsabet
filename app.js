@@ -91,21 +91,100 @@ const modalClose   = document.getElementById('modal-close');
 const betForm      = document.getElementById('bet-form');
 const modalBetName = document.getElementById('modal-bet-name');
 const modalBetOdd  = document.getElementById('modal-bet-odd');
+const modalBetList = document.getElementById('modal-bet-list');
+const betSlip      = document.getElementById('bet-slip');
+const betSlipCount = document.getElementById('bet-slip-count');
+const betSlipQuote = document.getElementById('bet-slip-quote');
+const openBetModal = document.getElementById('btn-open-bet-modal');
+const betButtons   = Array.from(document.querySelectorAll('.odd-btn, .odd-btn-sm'));
 
 let currentBet = null;
+const selectedBets = [];
+
+function getBetKey(bet) {
+  return `${bet.scommessa}__${bet.quota}`;
+}
+
+function getCombinedOdd() {
+  return selectedBets.reduce((total, bet) => total * parseFloat(bet.quota), 1);
+}
+
+function syncSelectedButtons() {
+  const selectedKeys = new Set(selectedBets.map(getBetKey));
+
+  betButtons.forEach(btn => {
+    const isSelected = selectedKeys.has(getBetKey({
+      scommessa: btn.dataset.bet,
+      quota: btn.dataset.odd
+    }));
+
+    btn.classList.toggle('selected', isSelected);
+    btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+  });
+}
+
+function updateBetSlip() {
+  const count = selectedBets.length;
+  const combinedOdd = count ? getCombinedOdd().toFixed(2) : '0.00';
+
+  betSlip.hidden = count === 0;
+  betSlipCount.textContent = `${count} ${count === 1 ? 'evento selezionato' : 'eventi selezionati'}`;
+  betSlipQuote.textContent = `Quota totale @${combinedOdd}`;
+  openBetModal.disabled = count === 0;
+}
+
+function clearSelectedBets() {
+  selectedBets.length = 0;
+  currentBet = null;
+  syncSelectedButtons();
+  updateBetSlip();
+}
+
+function renderCurrentBet() {
+  if (!currentBet) return;
+
+  modalBetName.textContent = currentBet.scommessa;
+  modalBetOdd.textContent = '@' + currentBet.quota;
+  modalBetList.innerHTML = currentBet.selections
+    .map(selection => `<div class="modal-bet-list-item">• ${escHtml(selection.scommessa)} <span>@${escHtml(selection.quota)}</span></div>`)
+    .join('');
+}
 
 /* Attach click to every odds button */
-document.querySelectorAll('.odd-btn, .odd-btn-sm').forEach(btn => {
+betButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    currentBet = {
+    const bet = {
       scommessa: btn.dataset.bet,
       quota:     btn.dataset.odd
     };
-    modalBetName.textContent = currentBet.scommessa;
-    modalBetOdd.textContent  = '@' + currentBet.quota;
-    overlay.classList.add('active');
-    document.getElementById('inp-nome').focus();
+
+    const existingIndex = selectedBets.findIndex(item => getBetKey(item) === getBetKey(bet));
+
+    if (existingIndex >= 0) selectedBets.splice(existingIndex, 1);
+    else selectedBets.push(bet);
+
+    syncSelectedButtons();
+    updateBetSlip();
   });
+});
+
+openBetModal.addEventListener('click', () => {
+  if (!selectedBets.length) {
+    showToast('⚠️ Seleziona almeno un evento prima di scommettere.', '#b45309');
+    return;
+  }
+
+  currentBet = {
+    selections: selectedBets.map(bet => ({ ...bet })),
+    scommessa: selectedBets.length === 1
+      ? selectedBets[0].scommessa
+      : `Multipla da ${selectedBets.length} eventi`,
+    quota: getCombinedOdd().toFixed(2)
+  };
+
+  renderCurrentBet();
+  overlay.classList.add('active');
+  document.getElementById('inp-nome').focus();
 });
 
 modalClose.addEventListener('click', closeModal);
@@ -137,6 +216,11 @@ betForm.addEventListener('submit', e => {
     return;
   }
 
+  if (!currentBet || !currentBet.selections || currentBet.selections.length === 0) {
+    showToast('⚠️ Seleziona almeno un evento prima di salvare la scommessa.', '#b45309');
+    return;
+  }
+
   const quota             = parseFloat(currentBet.quota);
   const vincitaPotenziale = (importo * quota).toFixed(2);
 
@@ -145,6 +229,7 @@ betForm.addEventListener('submit', e => {
     nome,
     cognome,
     telefono,
+    selections:         currentBet.selections,
     scommessa:         currentBet.scommessa,
     quota:             currentBet.quota,
     importo:           importo.toFixed(2),
@@ -157,8 +242,11 @@ betForm.addEventListener('submit', e => {
   bets.push(bet);
   saveBets(bets);
 
+  const riepilogoScommessa = currentBet.scommessa;
+  const riepilogoQuota = currentBet.quota;
   closeModal();
-  showToast(`✅ Scommessa piazzata! ${nome} ${cognome} – ${currentBet.scommessa} @${currentBet.quota} · Vincita potenziale: 🍺 ${vincitaPotenziale}`);
+  clearSelectedBets();
+  showToast(`✅ Scommessa piazzata! ${nome} ${cognome} – ${riepilogoScommessa} @${riepilogoQuota} · Vincita potenziale: 🍺 ${vincitaPotenziale}`);
 });
 
 /* ---------- Storage helpers ---------- */
@@ -174,6 +262,14 @@ function saveBets(bets) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(bets, null, 2));
 }
 
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 /* ---------- Toast ---------- */
 let toastTimer = null;
 
@@ -186,3 +282,6 @@ function showToast(msg, bg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove('show'), 3800);
 }
+
+syncSelectedButtons();
+updateBetSlip();

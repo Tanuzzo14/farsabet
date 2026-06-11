@@ -52,6 +52,18 @@ function render() {
       day: '2-digit', month: '2-digit', year: 'numeric',
       hour: '2-digit', minute: '2-digit'
     });
+    const selections = Array.isArray(bet.selections) ? bet.selections : [];
+    const hasMultipleSelections = selections.length > 1;
+    const betTitle = hasMultipleSelections
+      ? `Multipla • ${selections.length} eventi`
+      : bet.scommessa;
+    const selectionList = hasMultipleSelections
+      ? `<div class="bet-selection-list">${selections.map(selection => `
+          <div class="bet-selection-item">
+            <span>${escHtml(selection.scommessa)}</span>
+            <strong>@${escHtml(selection.quota)}</strong>
+          </div>`).join('')}</div>`
+      : '';
 
     const card = document.createElement('div');
     card.className = 'bet-card';
@@ -60,7 +72,8 @@ function render() {
     card.innerHTML = `
       <div class="bet-card-left">
         <div class="bettor-name">${escHtml(bet.nome)} ${escHtml(bet.cognome)}</div>
-        <div class="bet-selection">📌 ${escHtml(bet.scommessa)}</div>
+        <div class="bet-selection">📌 ${escHtml(betTitle)}</div>
+        ${selectionList}
         <div class="bet-meta">
           <span>📞 ${escHtml(bet.telefono)}</span>
           <span>🕐 ${date}</span>
